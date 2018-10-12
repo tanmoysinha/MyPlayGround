@@ -1,0 +1,13 @@
+[Unit]
+Description=RemotePortFwd SSH through AWS
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=2s
+ExecStart=/bin/bash -c '/home/tanmoy/ssh_awstunnel.sh'
+
+[Install]
+WantedBy=multi-user.target
